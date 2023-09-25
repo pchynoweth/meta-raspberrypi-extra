@@ -3,7 +3,9 @@ DESCRIPTION = "Recipe to configure wlan0 for RaspberryPi"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=0af97f0c455facefc50d88e25c3a1d3a"
 
-SRC_URI = "file://85-wireless.network"
+SRC_URI = "file://85-wireless.network \
+           file://LICENSE 
+          "
 
 def get_files(d):
     return " ".join([
