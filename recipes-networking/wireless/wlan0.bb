@@ -14,6 +14,8 @@ def get_files(d):
 
 FILES:${PN} = "${@get_files(d)}"
 
+S = "${WORKDIR}"
+
 do_install() {
        install -d ${D}${sysconfdir}/wpa_supplicant
        install -d ${D}${sysconfdir}/systemd/system/multi-user.target.wants
@@ -33,7 +35,7 @@ network={
 EOF
 
     ln -sf ${systemd_system_unitdir}/wpa_supplicant@.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
-    install -m 644 ${WORKDIR}/85-wireless.network ${D}${systemd_unitdir}/network
+    install -m 644 ${S}/85-wireless.network ${D}${systemd_unitdir}/network
 }
 
 RDEPENDS:${PN}:append = " wpa-supplicant"
