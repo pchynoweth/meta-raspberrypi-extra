@@ -1,4 +1,4 @@
-SUMMARY = "wlan configuration recipe"
+SUMMARY = "wlan0 configuration recipe"
 DESCRIPTION = "Recipe to configure wlan0 for RaspberryPi"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
