@@ -19,4 +19,4 @@ do_install() {
 	install -m 744 ${S}/usr/lib/raspi-config/init_resize.sh ${D}${nonarch_libdir}/raspi-config
 }
 
-RDEPENDS:${PN} = " bash e2fsprogs-resize2fs libnewt parted util-linux-findmnt"
+RDEPENDS:${PN} = " bash e2fsprogs-resize2fs parted util-linux-findmnt whiptail"
