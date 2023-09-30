@@ -9,8 +9,10 @@ SRC_URI = "git://github.com/RPi-Distro/raspi-config.git;protocol=https;branch=ma
 PV = "1.0+git${SRCPV}"
 S = "${WORKDIR}/git"
 
-FILES:${PN} = " \
-    ${nonarch_libdir}/raspi-config \
+PACKAGES:prepend = "rpi-init-resize-script "
+
+FILES:rpi-init-resize-script = " \
+    ${nonarch_libdir}/raspi-config/init_resize.sh \
     "
 
 do_install() {
@@ -19,4 +21,4 @@ do_install() {
 	install -m 744 ${S}/usr/lib/raspi-config/init_resize.sh ${D}${nonarch_libdir}/raspi-config
 }
 
-RDEPENDS:${PN} = " bash e2fsprogs-resize2fs parted util-linux-findmnt whiptail"
+RDEPENDS:rpi-init-resize-script = " bash parted util-linux-findmnt whiptail"
